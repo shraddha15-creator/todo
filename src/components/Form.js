@@ -12,7 +12,7 @@ const Form = ({ addTodo }) => {
   
 
   return (
-    <form>
+    <form onSubmit={e => {e.preventDefault()}} >
       <input
         value={inputText}
         onChange={(e) => {setInputText(e.target.value)}}

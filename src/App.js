@@ -12,10 +12,23 @@ function App() {
       ...todos, { text: inputText, completed: false, id: Math.random() * 1000 }
     ])
   };
+  // ***********************complete todo**************************
+  const completeTodo = (id) => {
+    const newTodos = todos.map(todo => {
+      if (todo.id === id) {
+        return {...todo, completed: !todo.completed }
+      }
+      return todo
+    })
 
+    setTodos(newTodos)
+  }
+
+
+  // *******************delete todo***************************
   const deleteTodo = (id) => {
     const newTodos = todos.filter(todo => {
-      if(todo.id === id) {
+      if (todo.id === id) {
         return false
       }
       return true
@@ -31,7 +44,8 @@ function App() {
         <h1>TODO List</h1>
       </header>
       <Form addTodo={addTodo} />
-      <TodoList todos={todos} deleteTodo={deleteTodo}/>
+      <TodoList todos={todos} completeTodo={completeTodo} deleteTodo={deleteTodo} />
+      {/* <TodoList todos={todos} completeTodo={completeTodo} /> */}
     </div>
   );
 }
