@@ -69,15 +69,18 @@ form button:hover {
 
 .trash-btn,
 .complete-btn {
-  background: #5863ff;
+  background: #0529f7;
   color: white;
   border: none;
   padding: 1rem;
   cursor: pointer;
   font-size: 1rem;
 }
+
+
+
 .complete-btn {
-  background:#0529f7;
+  background:#546eff;
 }
 .todo-item {
   padding: 0rem 0.5rem;
